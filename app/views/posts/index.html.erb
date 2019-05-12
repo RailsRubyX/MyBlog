@@ -1,7 +1,19 @@
+
 <% @posts.each do |post| %>
+	<article class="post">
+		<section class="post-head">
+			<h2><%= link_to post.title, post %></h2>
+			<small>
+				<time><%= post.created_at.to_date.strftime("%d %B, %Y") %> </time>
+			</small>
+		</section>
+
+		<section class="post-summary">
+			<%= post.body %>
+		</section>
+	</article>
+
 	<div class="post_wrapper">
-		<h2 class="title">
-			<%= link_to post.title, post %>
-		</h2>
+		
 	</div>
 <% end %>
